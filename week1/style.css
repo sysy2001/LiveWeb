@@ -1,0 +1,27 @@
+.row {
+    display: flex;
+}
+
+.column {
+    padding: 10px;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.title{
+    text-align: center;
+    font-size: 50px;
+}
+
+.pic {
+    cursor: pointer;
+    margin: 5px;
+}
+
+.pic:hover {
+    opacity: 0.9;
+    box-shadow: 10px 10px;
+}

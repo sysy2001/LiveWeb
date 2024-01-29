@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Self Portrait</title>
+        <link href="style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarala">
+            <style>
+            body {
+                font-family: "Sarala", sans-serif;
+            }
+            </style>
+        <script type="text/javascript">
+            let hello;
+            let imgs = [];
+            let tracks = [];
+            window.addEventListener('load', init);
+            
+            function init() {
+                img1 = document.getElementById('olivia');
+                imgs.push(img1);
+                img2 = document.getElementById('sunset');
+                imgs.push(img2); 
+                img3 = document.getElementById('less');
+                imgs.push(img3);
+                img4 = document.getElementById('nwjs');
+                imgs.push(img4);
+                img5 = document.getElementById('ginger');
+                imgs.push(img5);
+                img6 = document.getElementById('vaundy');
+                imgs.push(img6);
+
+                audio1 = new Audio("audio/livliv.webm");
+                tracks.push(audio1);
+                audio2 = new Audio("audio/jiji.webm");
+                tracks.push(audio2);
+                audio3 = new Audio("audio/less.webm");
+                tracks.push(audio3);
+                audio4 = new Audio("audio/njnj.webm");
+                tracks.push(audio4);
+                audio5 = new Audio("audio/juju.m4a");
+                tracks.push(audio5);
+                audio6 = new Audio("audio/vava.webm");
+                tracks.push(audio6);
+
+                for (let i = 0; i <imgs.length;i++) {
+                    let clickimg = () => {
+                        for (let j = 0; j < imgs.length; j++) {
+                            audio = tracks[j];
+                            if (j == i) {
+                                audio.play().catch(error => {
+                                console.error('Error during audio playback:', error);});
+                            } else {
+                                audio.pause();
+                            }
+                        }
+                    }
+
+                    imgs[i].addEventListener('click', clickimg);
+                }
+            }
+
+            
+        </script>
+    </head>
+    <body>
+        <h2 class = "title" >Here are Sangyu's favorite albums!</h2>
+        <div class = "center">
+            <div class="row">
+                <div class="column">
+                    <img id = "olivia" class ="pic" src="album/guts.jpeg" style="width:200px;height:200px;">
+                    <img id = "sunset" class ="pic" src="album/jinji.jpg" style="width:200px;height:200px;">
+                    <img id = "less" class ="pic" src="album/less.png" style="width:200px;height:200px;">
+                </div>
+                <div class="column">
+                    <img id = "nwjs" class ="pic" src="album/nwjns.jpeg" style="width:200px;height:200px;">
+                    <img id = "ginger" class ="pic" src="album/slicker.jpeg" style="width:200px;height:200px;">
+                    <img id = "vaundy" class ="pic" src="album/vaundy.jpeg" style="width:200px;height:200px;">
+                </div>
+                
+            </div>
+        </div>
+
+        
+    </body>
+</html>
